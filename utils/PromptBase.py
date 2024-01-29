@@ -1,9 +1,7 @@
-import json 
+import json
+
 
 class PromptBase:
-    def __init__(self):
-        pass
-    
     def generate_rag_prompt(self, history):
         return '''
             You are an AI assistant that generates queries for document searches.
@@ -45,11 +43,11 @@ class PromptBase:
             </Reference document JSON format>
             <Reference document>
             ''' + ',\n'.join([json.dumps({
-                "SourceId": item['SourceId'],
-                "DocumentId": item['DocumentId'],
-                "DocumentTitle": item['DocumentTitle'],
-                "Content": item['Content']
-                }) for item in kendra_items]) + '''
+            "SourceId": item['SourceId'],
+            "DocumentId": item['DocumentId'],
+            "DocumentTitle": item['DocumentTitle'],
+            "Content": item['Content']
+        }) for item in kendra_items]) + '''
             </Reference document>
 
             <Answer rules>
