@@ -54,3 +54,14 @@ Here are some screenshots of the app in action:
 ![Generate Image](docs/image-screenshot.png)
 
 ![RAG Chat with Kendra](docs/rag-screenshot.png)
+## To create a Kendra index and connect a data source (PDF, HTML, PowerPoints, Microsoft Word, FAQs, etc). 
+1. Sign in to the Amazon Kendra console and choose "Create index" [(link)](https://console.aws.amazon.com/kendra/home)
+2. Choose "Developer edition" and select "Create" to build the index. This process takes 15-30 minutes.
+3. Once the index is active, you can add data sources like an S3 bucket or SharePoint site. In the navigation pane, select "Data sources" and then "Add data source".
+4. Configure the data source by specifying details like the source endpoint URL or S3 path. Kendra will then automatically index the documents from this source.
+5. Copy Kendra index id to the .env variable
+
+### More information
+1. [Create and query an index with Amazon Kendra](https://aws.amazon.com/getting-started/hands-on/create-query-index-with-amazon-kendra/)
+2. [Getting started with the Amazon Kendra console - Amazon Kendra](https://docs.aws.amazon.com/kendra/latest/dg/gs-console.html)
+
